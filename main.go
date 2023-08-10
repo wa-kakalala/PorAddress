@@ -4,13 +4,20 @@ import (
 	"PorAddress/email"
 	"PorAddress/ipaddr"
 	"fmt"
+	"time"
 )
 
 func main() {
 	al := &ipaddr.AddressList{}
-	err := al.GetAddressList()
-	if err != nil {
-		fmt.Println("get address error")
+	for {
+		err := al.GetAddressList()
+		if err != nil {
+			fmt.Println("get address error")
+			time.Sleep(2 * time.Second)
+		} else {
+			fmt.Println("get address successfully")
+			break
+		}
 	}
 
 	el := &email.EmailInfo{
@@ -37,9 +44,10 @@ func main() {
 	e_content += "--------------------------------\n"
 	e_content += "The End!!!👻"
 
-	err = el.SendEmail(e_content)
+	err := el.SendEmail(e_content)
 	if err != nil {
 		fmt.Println("send email error")
+	} else {
+		fmt.Println("send email successfully")
 	}
-
 }
