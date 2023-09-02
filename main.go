@@ -45,9 +45,14 @@ func main() {
 	e_content += "The End!!!👻"
 
 	err := el.SendEmail(e_content)
-	if err != nil {
-		fmt.Println("send email error")
-	} else {
-		fmt.Println("send email successfully")
+	for {
+		if err != nil {
+			fmt.Println("send email error")
+			time.Sleep(2 * time.Second)
+		} else {
+			fmt.Println("send email successfully")
+			break
+		}
 	}
+
 }
