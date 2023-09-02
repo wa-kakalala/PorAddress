@@ -41,10 +41,6 @@ systemctl start demo.service              	#启动服务
 systemctl status demo.service             	#服务详细信息
 ```
 
-- http://t.csdn.cn/v0lwO
-
-- http://t.csdn.cn/Npz6J
-
 ## 三、Display
 
 ![image-20230807170204658](pic/image-20230807170204658.png)
